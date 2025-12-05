@@ -1,0 +1,35 @@
+{
+  "name": "ikira",
+  "version": "1.1.0",
+  "description": "Interface Ikira packagée en application Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.ikira.app",
+    "productName": "Ikira",
+    "files": [
+      "**/*",
+      "!node_modules/.cache/**",
+      "!.git/**",
+      "!.gitignore"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "artifactName": "Ikira-Portable-${version}.exe"
+    }
+  }
+}
