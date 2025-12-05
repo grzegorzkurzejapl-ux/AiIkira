@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ikira – Compagne IA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="title-group">
+      <div class="avatar" aria-hidden="true">I</div>
+      <div>
+        <p class="eyebrow">Interface personnelle</p>
+        <h1>Ikira</h1>
+        <p class="subtitle">Discutez, enseignez-lui et construisez vos souvenirs ensemble.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel chat-panel" aria-label="Conversation avec Ikira">
+      <div id="chat" class="chat-log" role="log" aria-live="polite"></div>
+      <form id="message-form" class="input-row" autocomplete="off">
+        <label class="sr-only" for="message-input">Votre message</label>
+        <input id="message-input" type="text" name="message" placeholder="Écrire à Ikira..." required />
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <section class="panel teach-panel" aria-label="Enseigner quelque chose à Ikira">
+      <h2>Apprends-lui quelque chose</h2>
+      <p class="helper-text">Ajoutez une consigne ou une question et la réponse qu'Ikira devra retenir.</p>
+      <form id="teach-form" class="teach-form">
+        <label for="prompt-input">Message auquel répondre</label>
+        <textarea id="prompt-input" name="prompt" rows="2" placeholder="Ex. ""Quand je dis bonjour, réponds chaleureusement""" required></textarea>
+
+        <label for="response-input">Réponse d'Ikira</label>
+        <textarea id="response-input" name="response" rows="3" placeholder="Ex. ""Coucou ! Ravie de te voir 💫""" required></textarea>
+
+        <button type="submit">Enregistrer la réponse</button>
+      </form>
+    </section>
+  </main>
+
+  <template id="message-template">
+    <article class="message">
+      <div class="meta">
+        <span class="sender"></span>
+        <span class="time" aria-label="Heure du message"></span>
+      </div>
+      <p class="bubble"></p>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
